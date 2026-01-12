@@ -35,7 +35,10 @@ public interface StringList {
    * @return the string that was removed.
    * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or index >= size()).
    */
-  public String remove(int index);
+  public String remove(int index); //REMOVE THIS
+ 
+  // SAMPLE: {APPLE, BOOK, CAT } --> 3
+  
 
   /**
    * Returns the number of strings currently in the list.
@@ -44,10 +47,14 @@ public interface StringList {
    */
   public int size();
 
+  
+
   /**
    * Returns the current capacity of the list (i.e., the number of elements it can hold before resizing).
    *
    * @return the capacity of the list.
    */
   public int capacity();
+  // JUST RETURN THE AMOUNT IT CAN HOLD
+  // EG IF BOX HOLDS 8 BUT THERES 3 STUFF, THE CAPACITY IS 8
 }

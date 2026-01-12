@@ -10,7 +10,9 @@ public class DynamicStringList implements StringList {
     @Override
     public void set(int index, String value) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'set'");
+        // throw new UnsupportedOperationException("Unimplemented method 'set'");
+
+
     }
     // Orion
     @Override
@@ -21,9 +23,20 @@ public class DynamicStringList implements StringList {
     //Fred
     @Override
     public String remove(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+
+        // for storing the values
+        String removedWords = words[index];
+        
+        for (int i = index; i < size -1; i++ ) {
+           words[i] = words[i + 1];
+
+        }
+
+        words[--size] = null;
+         return removedWords;
     }
+   
+
     // Orion
     @Override
     public int size() {
@@ -34,7 +47,11 @@ public class DynamicStringList implements StringList {
     @Override
     public int capacity() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'capacity'");
+        // throw new UnsupportedOperationException("Unimplemented method 'capacity'");
+       
+
+
+
     }
     
 }
