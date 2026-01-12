@@ -1,4 +1,7 @@
 public class DynamicStringList implements StringList {
+    private String[] words;
+    private int size;
+
     // Orion
     @Override
     public String get(int index) {
@@ -11,7 +14,11 @@ public class DynamicStringList implements StringList {
     public void set(int index, String value) {
         // TODO Auto-generated method stub
         // throw new UnsupportedOperationException("Unimplemented method 'set'");
-        
+        if (index < 0 || index >= size) {
+             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+        words[index] = value;
+    }
 
     // Orion
     @Override
@@ -47,7 +54,7 @@ public class DynamicStringList implements StringList {
     public int capacity() {
         // TODO Auto-generated method stub
         // throw new UnsupportedOperationException("Unimplemented method 'capacity'");
-        return data.length;
+        return words.length;
 
 
 
