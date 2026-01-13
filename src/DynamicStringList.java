@@ -2,6 +2,11 @@ public class DynamicStringList implements StringList {
     private String[] words;
     private int size;
 
+    public DynamicStringList(){
+        words = new String[8];
+        size = 0;
+    }
+
     // Orion
     @Override
     public String get(int index) {
@@ -32,7 +37,7 @@ public class DynamicStringList implements StringList {
             }
         }
         if(i == words.length){
-            
+
         }
         
     }
@@ -56,8 +61,7 @@ public class DynamicStringList implements StringList {
     // Orion
     @Override
     public int size() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'size'");
+        return size;
     }
     //Fred
     @Override
