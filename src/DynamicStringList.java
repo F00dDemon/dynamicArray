@@ -10,17 +10,16 @@ public class DynamicStringList implements StringList {
     // Orion
     @Override
     public String get(int index) {
-        if(index >= 0 && index <= words.length){
+        if(index >= size && index <= words.length){
             return words[index];
         }else{
             throw new IndexOutOfBoundsException("Enter valid index");
         }
-        
     }
     //Fred
     @Override
     public void set(int index, String value) {
-        if (index < 0 || index >= size) {
+        if (index > 0 || index <= size) {
              throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
         words[index] = value;
@@ -29,17 +28,17 @@ public class DynamicStringList implements StringList {
     // Orion
     @Override
     public void add(String value) {
-        int i = 0;
-        for(i += 0; i < words.length; i++){
-            if(words[i].equals("")){
-                words[i] = value;
-                break;
+        if(size == words.length-1){
+            String[] temporary = new String[words.length];
+            for (int i = 0; i < words.length; i++ ) {
+                temporary[i] = words[i];
+            }
+            words = new String[words.length*2];
+            for (int i = 0; i < temporary.length; i++ ) {
+                words[i] = temporary[i];
             }
         }
-        if(i == words.length){
-
-        }
-        
+        words[size++] = value;
     }
     //Fred
     @Override
