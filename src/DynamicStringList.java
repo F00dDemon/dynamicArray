@@ -5,15 +5,16 @@ public class DynamicStringList implements StringList {
     // Orion
     @Override
     public String get(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+        if(index >= 0 && index <= words.length){
+            return words[index];
+        }else{
+            throw new IndexOutOfBoundsException("Enter valid index");
+        }
         
     }
     //Fred
     @Override
     public void set(int index, String value) {
-        // TODO Auto-generated method stub
-        // throw new UnsupportedOperationException("Unimplemented method 'set'");
         if (index < 0 || index >= size) {
              throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
@@ -23,8 +24,17 @@ public class DynamicStringList implements StringList {
     // Orion
     @Override
     public void add(String value) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+        int i = 0;
+        for(i += 0; i < words.length; i++){
+            if(words[i].equals("")){
+                words[i] = value;
+                break;
+            }
+        }
+        if(i == words.length){
+            
+        }
+        
     }
     //Fred
     @Override
@@ -52,12 +62,7 @@ public class DynamicStringList implements StringList {
     //Fred
     @Override
     public int capacity() {
-        // TODO Auto-generated method stub
-        // throw new UnsupportedOperationException("Unimplemented method 'capacity'");
         return words.length;
-
-
-
     }
     
 }
